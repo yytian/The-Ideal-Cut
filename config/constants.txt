@@ -1,0 +1,26 @@
+/* To change values, replace the numbers (be careful not to change the names or spacing) */
+
+/* DEMAND
+The function is y = ax + b, where y is the quantity, a is the slope, x is the price and b is the y-intercept
+Going with linear function for now since I was tired of fiddling with quadratics, can always change it later */
+
+slope		-0.025
+y-intercept	77.5
+
+/* SUPPLY
+The function is y = ax^3 - bx^2 + cx + d, where y is the cost of production and x is the quantity. The rest are constants.
+In case you're wondering I looked it up and apparently this is how they usually simulate it
+Results in quadratic increasing efficiency at the beginning, cubic decreasing efficiency later */
+
+a	5
+b	0
+c	150.0
+d	8450.0
+
+/* THE FIRMS 
+All of these values should remain integers */
+starting funds		50000
+maximum price		3000
+maximum quantity	20
+maximum PR (ads etc.)	200000
+PR granularity		20000	/* This is the amount of cash needed to double or halve a firm's demand */
