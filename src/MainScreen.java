@@ -8,14 +8,12 @@ public class MainScreen extends JPanel
 	private final JLabel LOGO = new JLabel(new ImageIcon(FileIO.mainLogo));
 	private final JButton NEWGAME = new JButton("New Game");
 	private final JButton INSTRUCTIONS = new JButton("Instructions");
-	private final JButton HIGHSCORES = new JButton("High scores");
-	private final JButton CREDITS = new JButton("Credits");
 	private final GameIO GAME;
 	private static JPanel storage;
 
 	public MainScreen(GameIO game)
 	{	
-		super(new GridLayout(2, 2));
+		super(new GridLayout(0, 2));
 		this.GAME = game;
 		
 		NEWGAME.addActionListener(this);
@@ -23,12 +21,6 @@ public class MainScreen extends JPanel
 		
 		INSTRUCTIONS.addActionListener(this);
 		add(INSTRUCTIONS);
-		
-		HIGHSCORES.addActionListener(this);
-		add(HIGHSCORES);
-		
-		CREDITS.addActionListener(this);
-		add(CREDITS);
 	}
 	
 	public void actionPerformed(ActionEvent e)
@@ -51,22 +43,6 @@ public class MainScreen extends JPanel
 		else if(e.getSource() == INSTRUCTIONS)
 		{
 			JOptionPane.showMessageDialog(GAME.getContentPane(), FileIO.instructions, "Instructions", JOptionPane.INFORMATION_MESSAGE);
-		}
-		else if(e.getSource() == HIGHSCORES)
-		{
-			FileIO.readHighScores();
-			String highScores = "";
-			for(int i = 0; i < FileIO.HIGHSCORESNUM; i++)
-				highScores += FileIO.highScoresPlayers[i] + " " + FileIO.highScores[i] + '\n';
-			JOptionPane.showMessageDialog(GAME.getContentPane(), highScores, "Instructions", JOptionPane.INFORMATION_MESSAGE);
-		}
-		else if(e.getSource() == CREDITS)
-		{
-			JOptionPane.showMessageDialog(GAME.getContentPane(),
-				"This game was created for CIA 4UE (if that is the correct code) by Jim Tian, Neville Chan, Nida Noorani, Alice Wang and Min Jo.\n" +
-				"Graphs were generated through the JFreeChart library released under the GNU Lesser General Public License (it's open source).\n" +
-				"Any other problems you have with the game? Please tell us! Have a nice day.",
-				"Instructions", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 	

@@ -1,4 +1,1 @@
-There are not any instructions here yet.
-Hopefully some are attached.
-
-The high scores are not currently working.
+See manual.
